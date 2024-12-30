@@ -52,7 +52,7 @@ aissemble-hive-metastore-service-chart:
       # persisted database.
       rootPassword: $getConfigValue(groupName=spark-infrastructure;propertyName=metastore.db.password)
       replicationPassword: hive
-      password: hive
+      password:  $getConfigValue(groupName=spark-infrastructure;propertyName=metastore.db.password)
 
   deployment:
     env:
